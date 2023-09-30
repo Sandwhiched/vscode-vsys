@@ -1,10 +1,13 @@
-# Changelog
+# <p style='color:seagreen' align='center'>Changelog</p>
 
-# [v1.1.1 *REVISION v1.1* **CURRENT**]
+# 1.2 **CURRENT**
+- Added Quick Executes
+
+## 1.1.1 *(Revision of 1.1)*
 - Fixed readme
 
-## [v1.1]
+## 1.1
 - Added minimum daemon control (restart/stop)
 
-## [v1]
+## 1
 - Initial release

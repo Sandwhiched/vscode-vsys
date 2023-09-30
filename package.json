@@ -1,8 +1,8 @@
 {
   "name": "vsys",
   "displayName": "VSYS",
-  "description": "Quickly manage your system through VS Code",
-  "version": "1.1.1",
+  "description": "Quickly manage your system through VS Code (Linux only, maybe macOS)",
+  "version": "1.2.0",
   "publisher": "SystemTomcat",
   "icon": "vsys.png",
   "repository": {
@@ -33,6 +33,14 @@
       {
         "command": "vsys.stopDaemon",
         "title": "VSYS: Stop Daemon..."
+      },
+      {
+        "command": "vsys.quickExecute",
+        "title": "VSYS: Quick Execute..."
+      },
+      {
+        "command": "vsys.rootExecute",
+        "title": "VSYS: Root Quick Execute..."
       }
     ]
   },
@@ -41,7 +49,8 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "spincycle": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts"
+    "lint": "eslint src --ext ts",
+    "pack": "vsce package"
   },
   "devDependencies": {
     "@types/vscode": "^1.82.0",

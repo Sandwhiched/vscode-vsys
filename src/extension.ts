@@ -60,10 +60,51 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 	});
 
+	let quickExecute = vscode.commands.registerCommand('vsys.quickExecute', async () => {
+		let command = '';
+		const input = await vscode.window.showInputBox({
+			placeHolder: 'command',
+			prompt: 'Enter command to run.',
+			value: command
+		});
+		if (input === '') {
+			vscode.window.showErrorMessage('A command is required.');
+		} else if (input !== undefined) {
+			cp.exec(input, (stderr, stdout) => {
+				if (stderr) {
+					vscode.window.showErrorMessage(`${stderr}`);
+				} else if (stdout) {
+					vscode.window.showInformationMessage(stdout);
+				}
+			});
+		}
+	});
+
+	let rootExecute = vscode.commands.registerCommand('vsys.rootExecute', async () => {
+		let command = '';
+		const input = await vscode.window.showInputBox({
+			placeHolder: 'command',
+			prompt: 'Enter command to run.',
+			value: command
+		});
+		if (input === '') {
+			vscode.window.showErrorMessage('A command is required.');
+		} else if (input !== undefined) {
+			cp.exec('pkexec ' + input, (stderr, stdout) => {
+				if (stderr) {
+					vscode.window.showErrorMessage(`${stderr}`);
+				} else if (stdout) {
+					vscode.window.showInformationMessage(stdout);
+				}
+			});
+		}
+	});	
+
 	context.subscriptions.push(reboot);
 	context.subscriptions.push(shutDown);
 	context.subscriptions.push(restartDaemon);
 	context.subscriptions.push(stopDaemon);
+	context.subscriptions.push(quickExecute);
 }
 
 export function deactivate() {console.log('VSYS is disabled.');}
