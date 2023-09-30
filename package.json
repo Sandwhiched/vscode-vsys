@@ -2,7 +2,7 @@
   "name": "vsys",
   "displayName": "VSYS",
   "description": "Quickly manage your system through VS Code",
-  "version": "1.2.0",
+  "version": "1.1.0",
   "publisher": "SystemTomcat",
   "icon": "vsys.png",
   "repository": {

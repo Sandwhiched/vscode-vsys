@@ -1,6 +1,6 @@
 # Changelog
 
-# [v1.2 **CURRENT**]
+# [v1.1 **CURRENT**]
 - Added minimum daemon control (restart/stop)
 
 ## [v1]
